@@ -3,11 +3,14 @@
 ;
 ;-----
 ;
+; (*) means hotkey is assigned.
+;  *  means hotkey is NOT assigned.
+;
 ; [case 1 - –³•ÏŠ·(vk1Dsc07B)]
 ;	(1)(2)(3)(4)(5)(6)(7)(8)(9)(0)
-;	(q) w (e)(r)(t)(y)(u)(i)(o)(p) 
-;	 a (s)(d)(f) g (h)(j)(k)(l)(;)
-;	 z  x  c  v  b (n)(m)(,)(.)(/)
+;	(q)(w)(e)(r) t  y (u)(i)(o)(p) 
+;	(a)(s) d  f  g (h)(j)(k)(l)(;)(:)
+;	 z  x (c) v (b)(n)(m)(,)(.) /
 ;
 ;----------------------------------------
 vk1Dsc07B & h::decorateModifier("Left")
@@ -19,13 +22,13 @@ vk1Dsc07B & i::decorateModifier("Del")
 vk1Dsc07B & m::decorateModifier("Enter")
 vk1Dsc07B & n::decorateModifier("PgDn")
 vk1Dsc07B & p::decorateModifier("PgUp")
-vk1Dsc07B & /::decorateModifier("vkF3sc029")	; vkF3sc029 = ”¼Šp/‘SŠp
+vk1Dsc07B & vkBAsc028::decorateModifier("vkF3sc029") ; vkBAsc028=:, vkF3sc029=”¼Šp/‘SŠp
 vk1Dsc07B & ,::decorateModifier("Home")
 vk1Dsc07B & .::decorateModifier("End")
 vk1Dsc07B & o::decorateModifier("Tab")
 vk1Dsc07B & `;::decorateModifier("Esc")
-vk1Dsc07B & y::AltTab
-vk1Dsc07B & t::ShiftAltTab
+vk1Dsc07B & w::moveToNextWord()
+vk1Dsc07B & b::moveToPreviousWord()
 vk1Dsc07B & e::selectCurrentLine()
 vk1Dsc07B & r::deleteCurrentLine()
 vk1Dsc07B & q::closeActiveWindow()
@@ -40,23 +43,23 @@ vk1Dsc07B & 8::decorateModifier("F8")
 vk1Dsc07B & 9::decorateModifier("F9")
 vk1Dsc07B & 0::decorateModifier("F10")
 ;----------------------------------------
-vk1Dsc07B & f::Return	; second modifier
-vk1Dsc07B & d::Return	; second modifier
-vk1Dsc07B & s::Return	; second modifier
+vk1Dsc07B & c::Return	; second modifier.see:isVirtualCtrlDown().
+vk1Dsc07B & s::Return	; second modifier.see:isVirtualShiftlDown().
+vk1Dsc07B & a::Return	; second modifier.see:isVirtualAltDown().
 ;----------------------------------------
 isVirtualCtrlDown()
 {
-	Return GetKeyState("f", "P")
+	Return GetKeyState("c", "P")
 }
 ;----------------------------------------
 isVirtualShiftDown()
 {
-	Return GetKeyState("d", "P")
+	Return GetKeyState("s", "P")
 }
 ;----------------------------------------
 isVirtualAltDown()
 {
-	Return GetKeyState("s", "P")
+	Return GetKeyState("a", "P")
 }
 ;----------------------------------------
 decorateModifier(_key)
@@ -89,6 +92,16 @@ decorateModifier(_key)
 	Send, % sentCommand
 }
 ;------------------------------
+moveToNextWord()
+{
+	Send, % "^{Right}"
+}
+;------------------------------
+moveToPreviousWord()
+{
+	Send, % "^{Left}"
+}
+;------------------------------
 selectCurrentLine()
 {
 	Send, % "{Blind}{End}+{Home}"
@@ -105,4 +118,5 @@ closeActiveWindow()
 	Send, % "!{F4}"
 }
 ;------------------------------
-;z::ExitApp		;===== for Debug =====
+; For Debugging.
+; z::ExitApp
