@@ -13,39 +13,39 @@
 ;	 z  x (c) v (b)(n)(m)(,)(.) /
 ;
 ;----------------------------------------
-vk1Dsc07B & h::decorateModifier("Left")
-vk1Dsc07B & j::decorateModifier("Down")
-vk1Dsc07B & k::decorateModifier("Up")
-vk1Dsc07B & l::decorateModifier("Right")
-vk1Dsc07B & u::decorateModifier("BS")
-vk1Dsc07B & i::decorateModifier("Del")
-vk1Dsc07B & m::decorateModifier("Enter")
-vk1Dsc07B & n::decorateModifier("PgDn")
-vk1Dsc07B & p::decorateModifier("PgUp")
-vk1Dsc07B & vkBAsc028::decorateModifier("vkF3sc029") ; vkBAsc028=:, vkF3sc029=”¼Šp/‘SŠp
-vk1Dsc07B & ,::decorateModifier("Home")
-vk1Dsc07B & .::decorateModifier("End")
-vk1Dsc07B & o::decorateModifier("Tab")
-vk1Dsc07B & `;::decorateModifier("Esc")
-vk1Dsc07B & w::moveToNextWord()
-vk1Dsc07B & b::moveToPreviousWord()
-vk1Dsc07B & e::selectCurrentLine()
-vk1Dsc07B & r::deleteCurrentLine()
-vk1Dsc07B & q::closeActiveWindow()
-vk1Dsc07B & 1::decorateModifier("F1")
-vk1Dsc07B & 2::decorateModifier("F2")
-vk1Dsc07B & 3::decorateModifier("F3")
-vk1Dsc07B & 4::decorateModifier("F4")
-vk1Dsc07B & 5::decorateModifier("F5")
-vk1Dsc07B & 6::decorateModifier("F6")
-vk1Dsc07B & 7::decorateModifier("F7")
-vk1Dsc07B & 8::decorateModifier("F8")
-vk1Dsc07B & 9::decorateModifier("F9")
-vk1Dsc07B & 0::decorateModifier("F10")
+sc07B & h::decorateModifier("Left")
+sc07B & j::decorateModifier("Down")
+sc07B & k::decorateModifier("Up")
+sc07B & l::decorateModifier("Right")
+sc07B & u::decorateModifier("BS")
+sc07B & i::decorateModifier("Del")
+sc07B & m::decorateModifier("Enter")
+sc07B & n::decorateModifier("PgDn")
+sc07B & p::decorateModifier("PgUp")
+sc07B & sc028::decorateModifier("sc029") ; vkBAsc028=:, vkF3sc029=”¼Šp/‘SŠp
+sc07B & ,::decorateModifier("Home")
+sc07B & .::decorateModifier("End")
+sc07B & o::decorateModifier("Tab")
+sc07B & `;::decorateModifier("Esc")
+sc07B & w::moveToNextWord()
+sc07B & b::moveToPreviousWord()
+sc07B & e::selectCurrentLine()
+sc07B & r::deleteCurrentLine()
+sc07B & q::closeActiveWindow()
+sc07B & 1::decorateModifier("F1")
+sc07B & 2::decorateModifier("F2")
+sc07B & 3::decorateModifier("F3")
+sc07B & 4::decorateModifier("F4")
+sc07B & 5::decorateModifier("F5")
+sc07B & 6::decorateModifier("F6")
+sc07B & 7::decorateModifier("F7")
+sc07B & 8::decorateModifier("F8")
+sc07B & 9::decorateModifier("F9")
+sc07B & 0::decorateModifier("F10")
 ;----------------------------------------
-vk1Dsc07B & c::Return	; second modifier.see:isVirtualCtrlDown().
-vk1Dsc07B & s::Return	; second modifier.see:isVirtualShiftlDown().
-vk1Dsc07B & a::Return	; second modifier.see:isVirtualAltDown().
+sc07B & c::Return	; second modifier.see:isVirtualCtrlDown().
+sc07B & s::Return	; second modifier.see:isVirtualShiftlDown().
+sc07B & a::Return	; second modifier.see:isVirtualAltDown().
 ;----------------------------------------
 isVirtualCtrlDown()
 {
